@@ -1,5 +1,6 @@
 from arclet.alconna.core import Alconna
 from arclet.alconna.manager import command_manager
+from nonebot_plugin_alconna.matcher import AlconnaMatcher
 
 from .typing import LudoMetadata
 
@@ -10,6 +11,14 @@ class LudokitManager:
     @property
     def commands(self) -> list[Alconna]:
         return command_manager.get_commands("ludokit")
+
+    def referent(self, command: Alconna) -> type[AlconnaMatcher] | None:
+        if "matcher" in command.meta.extra:
+            try:
+                return command.meta.extra["matcher"]()
+            except KeyError:
+                return None
+        return None
 
     def peek_last_command(self) -> Alconna:
         record = command_manager.records.items()[-1]

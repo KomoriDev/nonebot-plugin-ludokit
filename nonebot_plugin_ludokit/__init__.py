@@ -1,3 +1,4 @@
+import nonebot
 from nonebot.plugin import PluginMetadata, require, inherit_supported_adapters
 
 require("nonebot_plugin_alconna")
@@ -21,4 +22,7 @@ __plugin_meta__ = PluginMetadata(
     },
 )
 
+driver = nonebot.get_driver()
+
+from . import _hook as _hook
 from . import matcher as matcher
