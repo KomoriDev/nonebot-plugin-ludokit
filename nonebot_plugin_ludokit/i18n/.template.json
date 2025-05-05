@@ -1,0 +1,18 @@
+{
+  "$schema": ".template.schema.json",
+  "scopes": [
+    {
+      "scope": "ludo",
+      "types": [
+        {
+          "subtype": "matcher",
+          "types": [
+            "list",
+            "no_desc",
+            "last_cmd"
+          ]
+        }
+      ]
+    }
+  ]
+}

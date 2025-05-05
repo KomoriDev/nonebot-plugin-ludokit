@@ -1,0 +1,10 @@
+# $schema: .lang.schema.json
+
+ludo:
+  matcher:
+    list: 已加载的游戏列表：
+    no_desc: 暂无描述
+    last_cmd: |-
+      您刚刚使用的功能来自 [{name}]
+      如果想获得进一步帮助请使用命令
+      - /ludo {name}
